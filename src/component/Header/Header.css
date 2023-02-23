@@ -1,0 +1,17 @@
+a{
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    margin-left: 5px;
+    line-height: 32px;
+    padding: 4px 12px !important;
+}
+/* .navbar-brand{
+    color: #fff !important;
+} */
+.my-btn{
+    color:#fff ;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 4px 12px !important;
+}
