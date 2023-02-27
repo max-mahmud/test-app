@@ -50,6 +50,7 @@ const Singin = () => {
             Sing In </Button>
                 </Col>
             </Row>
+            
         </Container>
         
     )

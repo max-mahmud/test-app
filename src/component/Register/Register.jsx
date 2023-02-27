@@ -6,6 +6,9 @@ import { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import  auth  from '../../firebase.init';
 import {  NavLink } from 'react-router-dom';
+import GoogleSingUp from '../Google/GoogleSingUp';
+import Githubsingup from '../Github/Githubsingup';
+import FacebookSingup from '../Facebook/FacebookSingup';
 
 
 const Register = () => {
@@ -16,7 +19,7 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const massageDIV =document.getElementById('message-div')
 
     if (error) {
@@ -32,7 +35,7 @@ const Register = () => {
 
     return (
         <section>
-            <Container className='mt-5 p-5 text-white'>
+            <Container className='mt-2 p-5 text-white'>
            
             <Row >
                 <Col lg={{span:6, offset:3 }} className='bg-success p-5'>
@@ -50,8 +53,13 @@ const Register = () => {
         <div>
             <p>Already Have an Account? <NavLink to={'/singin'}className='nav-link my-link'>Sing In!</NavLink> </p>
         </div>
-        <Button variant="primary" type="submit" onClick={()=> createUserWithEmailAndPassword(email, password)}>
+        <Button variant="primary" className='w-100 bg-light text-dark' type="submit" onClick={()=> createUserWithEmailAndPassword(email, password)}>
             Submit </Button>
+
+            <span className='or_btn'>OR</span>
+            <GoogleSingUp></GoogleSingUp>
+            <FacebookSingup />
+            <Githubsingup />
                 </Col>
             </Row>
         </Container>
